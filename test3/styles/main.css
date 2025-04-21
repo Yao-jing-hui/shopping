@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    height: 60px;
+}
+
+.region-selector {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    margin: 0 20px;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+    display: block;
+}
+
+.nav-link:hover {
+    color: #ff4d4f;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff4d4f;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+    white-space: nowrap;
+}
+
+.login-btn, .register-btn {
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.login-btn {
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.register-btn {
+    color: #fff;
+    background-color: #ff4d4f;
+    border: 1px solid #ff4d4f;
+}
+
+.login-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.register-btn:hover {
+    background-color: #ff7875;
+}
+
+main {
+    margin-top: 80px;
+    padding: 20px;
+    min-height: calc(100vh - 80px);
+}
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: white;
+}
+
+.swiper-pagination-bullet {
+    background: white;
+}
+
+.swiper-pagination-bullet-active {
+    background: white;
+} 

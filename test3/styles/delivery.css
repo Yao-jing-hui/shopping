@@ -1,0 +1,87 @@
+.delivery-container {
+    max-width: 800px;
+    margin: 80px auto 0;
+    padding: 20px;
+}
+
+.delivery-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.status-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.status-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e0e0e0;
+}
+
+.status-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 30px;
+}
+
+.status-dot {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    border: 2px solid white;
+    z-index: 1;
+}
+
+.status-item.active .status-dot {
+    background-color: #ff4d4f;
+}
+
+.status-info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.status-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.delivery-details {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.delivery-details h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.detail-item .label {
+    width: 100px;
+    color: #666;
+}
+
+.detail-item .value {
+    flex: 1;
+    color: #333;
+} 

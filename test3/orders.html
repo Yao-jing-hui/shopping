@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单查询</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/orders.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="region-selector">
+                <span>中国大陆</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="products.html" class="nav-link">商品</a>
+                <a href="delivery.html" class="nav-link">配送</a>
+                <a href="orders.html" class="nav-link">订单</a>
+                <a href="reviews.html" class="nav-link">评论</a>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="login-btn">登录</a>
+                <a href="#" class="register-btn">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="orders-container">
+            <h1>我的订单</h1>
+            
+            <div class="order-filters">
+                <button class="filter-btn active">全部订单</button>
+                <button class="filter-btn">待付款</button>
+                <button class="filter-btn">待发货</button>
+                <button class="filter-btn">待收货</button>
+                <button class="filter-btn">已完成</button>
+            </div>
+
+            <div class="order-list">
+                <div class="order-item">
+                    <div class="order-header">
+                        <span class="order-time">2023-01-01 12:00:00</span>
+                        <span class="order-status">待付款</span>
+                    </div>
+                    <div class="order-content">
+                        <div class="product-info">
+                            <img src="images/product1.jpg" alt="商品图片">
+                            <div class="product-details">
+                                <h3>商品名称1</h3>
+                                <p class="price">¥99.00</p>
+                                <p class="quantity">x1</p>
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <button class="cancel-order">取消订单</button>
+                            <button class="pay-order">立即付款</button>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <span class="total-price">总计：¥99.00</span>
+                    </div>
+                </div>
+
+                <div class="order-item">
+                    <div class="order-header">
+                        <span class="order-time">2023-01-02 14:30:00</span>
+                        <span class="order-status">待发货</span>
+                    </div>
+                    <div class="order-content">
+                        <div class="product-info">
+                            <img src="images/product2.jpg" alt="商品图片">
+                            <div class="product-details">
+                                <h3>商品名称2</h3>
+                                <p class="price">¥199.00</p>
+                                <p class="quantity">x2</p>
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <button class="view-delivery">查看物流</button>
+                            <button class="confirm-receive">确认收货</button>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <span class="total-price">总计：¥398.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/orders.js"></script>
+</body>
+</html> 

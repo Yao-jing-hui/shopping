@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/products.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="region-selector">
+                <span>中国大陆</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="products.html" class="nav-link">商品</a>
+                <a href="delivery.html" class="nav-link">配送</a>
+                <a href="orders.html" class="nav-link">订单</a>
+                <a href="reviews.html" class="nav-link">评论</a>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="login-btn">登录</a>
+                <a href="#" class="register-btn">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="products-container">
+            <div class="product-card">
+                <img src="images/product1.jpg" alt="商品1">
+                <div class="product-info">
+                    <h3>商品名称1</h3>
+                    <p class="price">¥99.00</p>
+                    <button class="add-to-cart">加入购物车</button>
+                    <button class="buy-now">立即购买</button>
+                </div>
+            </div>
+            <!-- 更多商品卡片 -->
+        </div>
+    </main>
+
+    <div class="product-detail-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="product-detail">
+                <img src="" alt="商品详情图">
+                <div class="detail-info">
+                    <h2>商品名称</h2>
+                    <p class="price">¥99.00</p>
+                    <p class="description">商品描述...</p>
+                    <div class="quantity-selector">
+                        <button class="decrease">-</button>
+                        <input type="number" value="1" min="1">
+                        <button class="increase">+</button>
+                    </div>
+                    <button class="add-to-cart">加入购物车</button>
+                    <button class="buy-now">立即购买</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+</body>
+</html> 
