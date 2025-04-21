@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户评论</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/reviews.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="region-selector">
+                <span>中国大陆</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="products.html" class="nav-link">商品</a>
+                <a href="delivery.html" class="nav-link">配送</a>
+                <a href="orders.html" class="nav-link">订单</a>
+                <a href="reviews.html" class="nav-link">评论</a>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="login-btn">登录</a>
+                <a href="#" class="register-btn">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="reviews-container">
+            <h1>用户评价</h1>
+            
+            <div class="review-summary">
+                <div class="overall-rating">
+                    <div class="rating-score">4.8</div>
+                    <div class="rating-stars">★★★★★</div>
+                    <div class="rating-count">共1000+条评价</div>
+                </div>
+                <div class="rating-tags">
+                    <span class="tag active">全部(1000+)</span>
+                    <span class="tag">好评(950+)</span>
+                    <span class="tag">差评(50+)</span>
+                    <span class="tag">有图(200+)</span>
+                    <span class="tag">味道好(300+)</span>
+                    <span class="tag">服务好(250+)</span>
+                </div>
+            </div>
+
+            <div class="review-list">
+                <div class="review-item">
+                    <div class="reviewer-info">
+                        <img src="images/avatar1.jpg" alt="用户头像" class="avatar">
+                        <div class="reviewer-details">
+                            <span class="username">张三</span>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">商品质量很好，包装也很精美，物流速度很快，非常满意！</p>
+                        <div class="review-images">
+                            <img src="images/review1.jpg" alt="评价图片">
+                            <img src="images/review2.jpg" alt="评价图片">
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-time">2023-01-01 12:00:00</span>
+                            <span class="product-info">商品：商品名称1</span>
+                        </div>
+                    </div>
+                    <div class="review-actions">
+                        <button class="like-btn">👍 有用(10)</button>
+                        <button class="reply-btn">回复</button>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="reviewer-info">
+                        <img src="images/avatar2.jpg" alt="用户头像" class="avatar">
+                        <div class="reviewer-details">
+                            <span class="username">李四</span>
+                            <div class="rating">★★★★☆</div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">商品还不错，就是物流有点慢，希望改进。</p>
+                        <div class="review-meta">
+                            <span class="review-time">2023-01-02 14:30:00</span>
+                            <span class="product-info">商品：商品名称2</span>
+                        </div>
+                    </div>
+                    <div class="review-actions">
+                        <button class="like-btn">👍 有用(5)</button>
+                        <button class="reply-btn">回复</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="prev-page">上一页</button>
+                <span class="page-info">1/10</span>
+                <button class="next-page">下一页</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/reviews.js"></script>
+</body>
+</html> 
