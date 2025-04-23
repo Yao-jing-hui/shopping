@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐厅菜单 - 外卖代购平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">外卖代购</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="restaurants.html">商家</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.html">订单</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">个人中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 餐厅信息 -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <img src="images/restaurant1.jpg" class="card-img-top" alt="餐厅展示图" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <img src="images/restaurant-logo1.jpg" alt="餐厅logo" class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                            <div>
+                                <h4 class="mb-1 restaurant-name">川味小馆</h4>
+                                <p class="mb-1 text-muted">评分：4.8 (1000+ 评价)</p>
+                                <p class="mb-0 text-muted">起送价：¥<span class="min-order">20</span> | 配送费：¥<span class="delivery-fee">5</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 菜单分类 -->
+                <div class="menu-categories mb-4">
+                    <div class="list-group list-group-horizontal">
+                        <a href="#" class="list-group-item list-group-item-action active">全部</a>
+                        <a href="#" class="list-group-item list-group-item-action">热销</a>
+                        <a href="#" class="list-group-item list-group-item-action">主食</a>
+                        <a href="#" class="list-group-item list-group-item-action">小吃</a>
+                        <a href="#" class="list-group-item list-group-item-action">饮料</a>
+                    </div>
+                </div>
+
+                <!-- 菜单列表 -->
+                <div class="menu-items">
+                    <!-- 菜品1 -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="card-title mb-1">宫保鸡丁</h5>
+                                    <p class="card-text text-muted mb-2">鸡肉、花生、青椒等</p>
+                                    <p class="card-text text-danger mb-0">¥28</p>
+                                </div>
+                                <div class="text-end">
+                                    <img src="images/dish1.jpg" alt="宫保鸡丁" class="rounded mb-2" style="width: 80px; height: 80px;">
+                                    <div class="input-group input-group-sm" style="width: 100px;">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(1, -1)">-</button>
+                                        <input type="number" class="form-control text-center" value="0" min="0" id="quantity1">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(1, 1)">+</button>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm mt-2 w-100" onclick="addToCart(1)">加入购物车</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 菜品2 -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="card-title mb-1">鱼香肉丝</h5>
+                                    <p class="card-text text-muted mb-2">猪肉、木耳、胡萝卜等</p>
+                                    <p class="card-text text-danger mb-0">¥25</p>
+                                </div>
+                                <div class="text-end">
+                                    <img src="images/dish2.jpg" alt="鱼香肉丝" class="rounded mb-2" style="width: 80px; height: 80px;">
+                                    <div class="input-group input-group-sm" style="width: 100px;">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(2, -1)">-</button>
+                                        <input type="number" class="form-control text-center" value="0" min="0" id="quantity2">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(2, 1)">+</button>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm mt-2 w-100" onclick="addToCart(2)">加入购物车</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 购物车 -->
+            <div class="col-md-4">
+                <div class="card sticky-top" style="top: 80px;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">购物车</h5>
+                        <div id="cartItems">
+                            <!-- 购物车项将通过JavaScript动态添加 -->
+                        </div>
+                        <div class="cart-summary mt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>商品总额</span>
+                                <span id="cartSubtotal">¥0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>配送费</span>
+                                <span id="cartDeliveryFee">¥5</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>总计</span>
+                                <span class="text-danger" id="cartTotal">¥5</span>
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="checkout()" id="checkoutBtn" disabled>
+                                去结算
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 餐厅数据
+        const restaurants = {
+            1: {
+                name: '川味小馆',
+                rating: 4.8,
+                minOrder: 20,
+                deliveryFee: 5,
+                logo: 'images/restaurant-logo1.jpg',
+                banner: 'images/restaurant1.jpg',
+                menuItems: [
+                    {
+                        id: 1,
+                        name: '宫保鸡丁',
+                        description: '鸡肉、花生、青椒等',
+                        price: 28,
+                        image: 'images/dish1.jpg'
+                    },
+                    {
+                        id: 2,
+                        name: '鱼香肉丝',
+                        description: '猪肉、木耳、胡萝卜等',
+                        price: 25,
+                        image: 'images/dish2.jpg'
+                    }
+                ]
+            },
+            2: {
+                name: '粤式茶餐厅',
+                rating: 4.9,
+                minOrder: 25,
+                deliveryFee: 6,
+                logo: 'images/restaurant-logo2.jpg',
+                banner: 'images/restaurant2.jpg',
+                menuItems: [
+                    {
+                        id: 3,
+                        name: '叉烧包',
+                        description: '传统粤式点心',
+                        price: 18,
+                        image: 'images/dish3.jpg'
+                    },
+                    {
+                        id: 4,
+                        name: '虾饺',
+                        description: '鲜虾、竹笋等',
+                        price: 22,
+                        image: 'images/dish4.jpg'
+                    }
+                ]
+            }
+        };
+
+        // 获取餐厅ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const restaurantId = parseInt(urlParams.get('id')) || 1;
+        const restaurant = restaurants[restaurantId];
+
+        // 更新页面信息
+        document.querySelector('.restaurant-name').textContent = restaurant.name;
+        document.querySelector('.min-order').textContent = restaurant.minOrder;
+        document.querySelector('.delivery-fee').textContent = restaurant.deliveryFee;
+        document.querySelector('.card-img-top').src = restaurant.banner;
+        document.querySelector('.card-body img').src = restaurant.logo;
+
+        // 更新菜单列表
+        const menuItemsContainer = document.querySelector('.menu-items');
+        menuItemsContainer.innerHTML = restaurant.menuItems.map(item => `
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="card-title mb-1">${item.name}</h5>
+                            <p class="card-text text-muted mb-2">${item.description}</p>
+                            <p class="card-text text-danger mb-0">¥${item.price}</p>
+                        </div>
+                        <div class="text-end">
+                            <img src="${item.image}" alt="${item.name}" class="rounded mb-2" style="width: 80px; height: 80px;">
+                            <div class="input-group input-group-sm" style="width: 100px;">
+                                <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(${item.id}, -1)">-</button>
+                                <input type="number" class="form-control text-center" value="0" min="0" id="quantity${item.id}">
+                                <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(${item.id}, 1)">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-sm mt-2 w-100" onclick="addToCart(${item.id})">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        // 当前订单数据
+        let currentOrder = {
+            id: Date.now(),
+            restaurant: {
+                id: restaurantId,
+                name: restaurant.name,
+                minOrder: restaurant.minOrder,
+                deliveryFee: restaurant.deliveryFee
+            },
+            items: [],
+            subtotal: 0,
+            deliveryFee: restaurant.deliveryFee,
+            packingFee: 2,
+            discount: 0,
+            status: '待支付',
+            createTime: new Date().toISOString()
+        };
+
+        // 更新数量
+        function updateQuantity(itemId, change) {
+            const input = document.getElementById(`quantity${itemId}`);
+            let quantity = parseInt(input.value) + change;
+            if (quantity < 0) quantity = 0;
+            input.value = quantity;
+        }
+
+        // 加入订单
+        function addToCart(itemId) {
+            const input = document.getElementById(`quantity${itemId}`);
+            const quantity = parseInt(input.value);
+            
+            if (quantity <= 0) {
+                alert('请选择数量');
+                return;
+            }
+
+            const item = restaurant.menuItems.find(item => item.id === itemId);
+            if (item) {
+                // 更新订单项
+                const existingItem = currentOrder.items.find(item => item.id === itemId);
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    currentOrder.items.push({
+                        id: item.id,
+                        name: item.name,
+                        price: item.price,
+                        quantity: quantity
+                    });
+                }
+
+                // 更新订单总额
+                currentOrder.subtotal = currentOrder.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+                // 重置数量输入框
+                input.value = 0;
+                
+                // 更新显示
+                updateOrderDisplay();
+
+                // 显示添加成功提示
+                alert('已添加到订单');
+            }
+        }
+
+        // 更新订单显示
+        function updateOrderDisplay() {
+            const orderItemsContainer = document.getElementById('cartItems');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            const total = currentOrder.subtotal + currentOrder.deliveryFee + currentOrder.packingFee - currentOrder.discount;
+
+            // 更新订单项显示
+            if (currentOrder.items.length === 0) {
+                orderItemsContainer.innerHTML = '<p class="text-muted text-center mb-0">订单为空</p>';
+            } else {
+                orderItemsContainer.innerHTML = currentOrder.items.map(item => `
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <h6 class="mb-0">${item.name}</h6>
+                            <small class="text-muted">x${item.quantity}</small>
+                        </div>
+                        <span>¥${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `).join('');
+            }
+
+            // 更新金额显示
+            document.getElementById('cartSubtotal').textContent = `¥${currentOrder.subtotal.toFixed(2)}`;
+            document.getElementById('cartDeliveryFee').textContent = `¥${currentOrder.deliveryFee.toFixed(2)}`;
+            document.getElementById('cartTotal').textContent = `¥${total.toFixed(2)}`;
+
+            // 更新结算按钮状态
+            checkoutBtn.disabled = currentOrder.items.length === 0;
+            if (!checkoutBtn.disabled) {
+                checkoutBtn.classList.remove('disabled');
+            }
+        }
+
+        // 结算
+        function checkout() {
+            if (currentOrder.items.length === 0) {
+                alert('订单为空，请先添加商品');
+                return;
+            }
+
+            // 获取现有订单列表
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
+            // 添加新订单到列表开头
+            orders.unshift(currentOrder);
+            // 保存订单列表
+            localStorage.setItem('orders', JSON.stringify(orders));
+
+            // 跳转到订单页面
+            window.location.href = 'orders.html';
+        }
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            updateOrderDisplay();
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商家 - 外卖代购平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">外卖代购</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="restaurants.html">商家</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.html">订单</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">个人中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 商家内容 -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <!-- 搜索栏 -->
+                <div class="mb-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="搜索商家或美食">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 分类导航 -->
+                <div class="mb-4">
+                    <div class="row g-2">
+                        <div class="col-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <i class="bi bi-cup-hot fs-4"></i>
+                                        <p class="mb-0">快餐便当</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <i class="bi bi-egg-fried fs-4"></i>
+                                        <p class="mb-0">特色菜系</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <i class="bi bi-cake2 fs-4"></i>
+                                        <p class="mb-0">甜品饮品</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <i class="bi bi-shop fs-4"></i>
+                                        <p class="mb-0">超市便利</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商家列表 -->
+                <div id="restaurantList">
+                    <!-- 商家卡片将通过JavaScript动态添加 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom">
+        <div class="container">
+            <ul class="navbar-nav w-100 d-flex justify-content-around">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="bi bi-house-door"></i>
+                        <span class="d-block">首页</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="restaurants.html">
+                        <i class="bi bi-shop"></i>
+                        <span class="d-block">商家</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="orders.html">
+                        <i class="bi bi-list-ul"></i>
+                        <span class="d-block">订单</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">
+                        <i class="bi bi-person"></i>
+                        <span class="d-block">我的</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 渲染商家列表
+        function renderRestaurants() {
+            const restaurants = [
+                {
+                    id: 1,
+                    name: '川味小馆',
+                    rating: 4.8,
+                    monthlySales: 2000,
+                    minOrder: 20,
+                    deliveryFee: 5,
+                    banner: 'images/restaurant1.jpg',
+                    logo: 'images/restaurant-logo1.jpg'
+                },
+                {
+                    id: 2,
+                    name: '粤式茶餐厅',
+                    rating: 4.9,
+                    monthlySales: 1500,
+                    minOrder: 25,
+                    deliveryFee: 6,
+                    banner: 'images/restaurant2.jpg',
+                    logo: 'images/restaurant-logo2.jpg'
+                }
+            ];
+
+            const restaurantList = document.getElementById('restaurantList');
+            restaurantList.innerHTML = restaurants.map(restaurant => `
+                <div class="card mb-3" onclick="goToRestaurant(${restaurant.id})" style="cursor: pointer;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="${restaurant.banner}" class="img-fluid rounded-start h-100" alt="${restaurant.name}" style="object-fit: cover; height: 200px;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="${restaurant.logo}" alt="${restaurant.name}" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                                    <h5 class="card-title mb-0">${restaurant.name}</h5>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark me-2">${restaurant.rating}</span>
+                                    <small class="text-muted">月售 ${restaurant.monthlySales}</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="text-muted me-2">起送 ¥${restaurant.minOrder}</small>
+                                    <small class="text-muted">配送 ¥${restaurant.deliveryFee}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 跳转到商家详情页
+        function goToRestaurant(id) {
+            window.location.href = `restaurant.html?id=${id}`;
+        }
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            renderRestaurants();
+        });
+    </script>
+</body>
+</html> 
