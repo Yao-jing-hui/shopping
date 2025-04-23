@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收货地址 - 外卖代购平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">外卖代购</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.html">商家</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.html">订单</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">个人中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 地址管理内容 -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4>收货地址</h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAddressModal">
+                        <i class="bi bi-plus-lg"></i> 添加新地址
+                    </button>
+                </div>
+
+                <!-- 地址列表 -->
+                <div class="address-list">
+                    <!-- 默认地址 -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <h6 class="mb-0 me-2">张三</h6>
+                                        <span class="badge bg-primary">默认</span>
+                                    </div>
+                                    <p class="mb-1">北京市朝阳区xxx街xxx号</p>
+                                    <p class="mb-0 text-muted">138****8888</p>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editAddressModal">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 其他地址 -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="mb-2">李四</h6>
+                                    <p class="mb-1">北京市海淀区xxx街xxx号</p>
+                                    <p class="mb-0 text-muted">139****9999</p>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editAddressModal">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加地址模态框 -->
+    <div class="modal fade" id="addAddressModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">添加新地址</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addAddressForm">
+                        <div class="mb-3">
+                            <label class="form-label">收货人</label>
+                            <input type="text" class="form-control" name="name" placeholder="请输入收货人姓名">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">手机号</label>
+                            <input type="tel" class="form-control" name="phone" placeholder="请输入手机号">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">所在地区</label>
+                            <div class="row g-2">
+                                <div class="col">
+                                    <select class="form-select" name="province">
+                                        <option>请选择省份</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="city">
+                                        <option>请选择城市</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="district">
+                                        <option>请选择区县</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">详细地址</label>
+                            <textarea class="form-control" rows="3" name="detail" placeholder="请输入详细地址"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="setDefault" name="isDefault">
+                            <label class="form-check-label" for="setDefault">设为默认地址</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="addAddress()">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑地址模态框 -->
+    <div class="modal fade" id="editAddressModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">编辑地址</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editAddressForm">
+                        <div class="mb-3">
+                            <label class="form-label">收货人</label>
+                            <input type="text" class="form-control" name="name" value="张三">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">手机号</label>
+                            <input type="tel" class="form-control" name="phone" value="138****8888">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">所在地区</label>
+                            <div class="row g-2">
+                                <div class="col">
+                                    <select class="form-select" name="province">
+                                        <option selected>北京市</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="city">
+                                        <option selected>朝阳区</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="district">
+                                        <option selected>xxx区</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">详细地址</label>
+                            <textarea class="form-control" rows="3" name="detail">xxx街xxx号</textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="editDefault" name="isDefault" checked>
+                            <label class="form-check-label" for="editDefault">设为默认地址</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="updateAddress()">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 地址数据存储
+        let addresses = [
+            {
+                id: 1,
+                name: '张三',
+                phone: '138****8888',
+                province: '北京',
+                city: '朝阳',
+                district: 'xxx',
+                detail: 'xxx街xxx号',
+                isDefault: true
+            },
+            {
+                id: 2,
+                name: '李四',
+                phone: '139****9999',
+                province: '北京',
+                city: '海淀',
+                district: 'xxx',
+                detail: 'xxx街xxx号',
+                isDefault: false
+            }
+        ];
+
+        // 渲染地址列表
+        function renderAddressList() {
+            const addressList = document.querySelector('.address-list');
+            addressList.innerHTML = addresses.map(address => `
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <h6 class="mb-0 me-2">${address.name}</h6>
+                                    ${address.isDefault ? '<span class="badge bg-primary">默认</span>' : ''}
+                                </div>
+                                <p class="mb-1">${address.province}${address.city}${address.district}${address.detail}</p>
+                                <p class="mb-0 text-muted">${address.phone}</p>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-outline-primary btn-sm" onclick="editAddress(${address.id})">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="deleteAddress(${address.id})">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 添加新地址
+        function addAddress() {
+            const form = document.getElementById('addAddressForm');
+            const formData = new FormData(form);
+            
+            const newAddress = {
+                id: addresses.length + 1,
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                province: formData.get('province'),
+                city: formData.get('city'),
+                district: formData.get('district'),
+                detail: formData.get('detail'),
+                isDefault: formData.get('isDefault') === 'on'
+            };
+
+            if (newAddress.isDefault) {
+                addresses.forEach(addr => addr.isDefault = false);
+            }
+
+            addresses.push(newAddress);
+            renderAddressList();
+            
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addAddressModal'));
+            modal.hide();
+            form.reset();
+        }
+
+        // 编辑地址
+        function editAddress(id) {
+            const address = addresses.find(addr => addr.id === id);
+            if (!address) return;
+
+            const form = document.getElementById('editAddressForm');
+            form.querySelector('[name="name"]').value = address.name;
+            form.querySelector('[name="phone"]').value = address.phone;
+            form.querySelector('[name="province"]').value = address.province;
+            form.querySelector('[name="city"]').value = address.city;
+            form.querySelector('[name="district"]').value = address.district;
+            form.querySelector('[name="detail"]').value = address.detail;
+            form.querySelector('[name="isDefault"]').checked = address.isDefault;
+
+            const modal = new bootstrap.Modal(document.getElementById('editAddressModal'));
+            modal.show();
+
+            // 保存编辑后的地址
+            document.getElementById('editAddressModal').querySelector('.btn-primary').onclick = function() {
+                const formData = new FormData(form);
+                const updatedAddress = {
+                    ...address,
+                    name: formData.get('name'),
+                    phone: formData.get('phone'),
+                    province: formData.get('province'),
+                    city: formData.get('city'),
+                    district: formData.get('district'),
+                    detail: formData.get('detail'),
+                    isDefault: formData.get('isDefault') === 'on'
+                };
+
+                if (updatedAddress.isDefault) {
+                    addresses.forEach(addr => addr.isDefault = false);
+                }
+
+                addresses = addresses.map(addr => 
+                    addr.id === id ? updatedAddress : addr
+                );
+
+                renderAddressList();
+                modal.hide();
+            };
+        }
+
+        // 删除地址
+        function deleteAddress(id) {
+            if (confirm('确定要删除这个地址吗？')) {
+                addresses = addresses.filter(addr => addr.id !== id);
+                renderAddressList();
+            }
+        }
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            renderAddressList();
+        });
+    </script>
+</body>
+</html> 

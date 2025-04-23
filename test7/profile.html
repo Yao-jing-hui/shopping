@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 - 外卖代购平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">外卖代购</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.html">商家</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orders.html">订单</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">个人中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 个人中心内容 -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- 用户信息卡片 -->
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="images/avatar.jpg" class="rounded-circle mb-3" alt="用户头像" style="width: 100px; height: 100px;">
+                        <h5 class="card-title">张三</h5>
+                        <p class="text-muted">普通会员</p>
+                        <button class="btn btn-outline-primary w-100">编辑资料</button>
+                    </div>
+                </div>
+
+                <!-- 功能菜单 -->
+                <div class="list-group">
+                    <a href="orders.html" class="list-group-item list-group-item-action">
+                        <i class="bi bi-bag me-2"></i>我的订单
+                    </a>
+                    <a href="addresses.html" class="list-group-item list-group-item-action">
+                        <i class="bi bi-geo-alt me-2"></i>收货地址
+                    </a>
+                    <a href="favorites.html" class="list-group-item list-group-item-action">
+                        <i class="bi bi-heart me-2"></i>我的收藏
+                    </a>
+                    <a href="coupons.html" class="list-group-item list-group-item-action">
+                        <i class="bi bi-ticket-perforated me-2"></i>优惠券
+                    </a>
+                    <a href="settings.html" class="list-group-item list-group-item-action">
+                        <i class="bi bi-gear me-2"></i>设置
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <!-- 订单状态 -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">订单状态</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row text-center">
+                            <div class="col">
+                                <i class="bi bi-wallet2 fs-1 text-primary"></i>
+                                <p class="mt-2">待付款</p>
+                            </div>
+                            <div class="col">
+                                <i class="bi bi-truck fs-1 text-warning"></i>
+                                <p class="mt-2">配送中</p>
+                            </div>
+                            <div class="col">
+                                <i class="bi bi-check-circle fs-1 text-success"></i>
+                                <p class="mt-2">已完成</p>
+                            </div>
+                            <div class="col">
+                                <i class="bi bi-arrow-return-left fs-1 text-danger"></i>
+                                <p class="mt-2">退款/售后</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 最近订单 -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">最近订单</h5>
+                        <a href="orders.html" class="btn btn-link">查看全部</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="order-item mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="mb-0">川味小馆</h6>
+                                <span class="badge bg-success">已完成</span>
+                            </div>
+                            <p class="text-muted mb-2">宫保鸡丁 x1, 鱼香肉丝 x1</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">2024-01-15 12:30</small>
+                                <span class="text-danger">¥55</span>
+                            </div>
+                        </div>
+                        <!-- 更多订单 -->
+                    </div>
+                </div>
+
+                <!-- 我的收藏 -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">我的收藏</h5>
+                        <a href="favorites.html" class="btn btn-link">查看全部</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card">
+                                    <img src="images/restaurant1.jpg" class="card-img-top" alt="餐厅图片">
+                                    <div class="card-body">
+                                        <h6 class="card-title">川味小馆</h6>
+                                        <p class="card-text text-muted">
+                                            <small>
+                                                <i class="bi bi-star-fill text-warning"></i> 4.8
+                                                <span class="ms-2">月售 1000+</span>
+                                            </small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 更多收藏 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-light mt-5 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>© 2024 外卖代购平台 版权所有</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-dark me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-dark me-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

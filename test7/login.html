@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录/注册 - 外卖代购平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">外卖代购</a>
+        </div>
+    </nav>
+
+    <!-- 登录/注册表单 -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs mb-4" id="authTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">登录</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">注册</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="authTabsContent">
+                            <!-- 登录表单 -->
+                            <div class="tab-pane fade show active" id="login" role="tabpanel">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="loginPhone" class="form-label">手机号</label>
+                                        <input type="tel" class="form-control" id="loginPhone" placeholder="请输入手机号">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">密码</label>
+                                        <input type="password" class="form-control" id="loginPassword" placeholder="请输入密码">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">记住我</label>
+                                        <a href="#" class="float-end">忘记密码？</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">登录</button>
+                                </form>
+                                <div class="text-center mt-3">
+                                    <p>其他登录方式</p>
+                                    <div class="d-flex justify-content-center gap-3">
+                                        <button class="btn btn-outline-primary">
+                                            <i class="bi bi-wechat"></i>
+                                        </button>
+                                        <button class="btn btn-outline-primary">
+                                            <i class="bi bi-alipay"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 注册表单 -->
+                            <div class="tab-pane fade" id="register" role="tabpanel">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="registerPhone" class="form-label">手机号</label>
+                                        <input type="tel" class="form-control" id="registerPhone" placeholder="请输入手机号">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerCode" class="form-label">验证码</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="registerCode" placeholder="请输入验证码">
+                                            <button class="btn btn-outline-secondary" type="button">获取验证码</button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerPassword" class="form-label">密码</label>
+                                        <input type="password" class="form-control" id="registerPassword" placeholder="请输入密码">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">确认密码</label>
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="请再次输入密码">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="agreeTerms">
+                                        <label class="form-check-label" for="agreeTerms">
+                                            我已阅读并同意<a href="#">用户协议</a>和<a href="#">隐私政策</a>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">注册</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-light mt-5 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>© 2024 外卖代购平台 版权所有</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-dark me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-dark me-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
